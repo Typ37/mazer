@@ -1,11 +1,11 @@
-package maze.algo.solving;
-
-import java.util.Objects;
-
 /*  Aiden Donavan
  *  6/7/2023
  *  This class stores an information about the particular node in a node grid.
  */
+package maze.algo.solving;
+
+import java.util.Objects;
+
 class Node {
 
     //cost of moving to a neighboring node
