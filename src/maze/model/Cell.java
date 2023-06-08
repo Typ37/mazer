@@ -1,37 +1,27 @@
+/*  Aiden Donavan
+ *  6/7/2023
+ *  This class stores an information about the particular cell in a grid.
+ */
 package maze.model;
 
 import java.util.Objects;
 
-/**
- * This class stores an information about the particular cell in a grid.
- *
- * @author Philipp Malkovsky
- */
 public class Cell {
 
-    /**
-     * Cell can be either a passage, a wall
-     * or be a part of an escape path.
-     */
+    //Cells are either a passage, wall, or part of the escape path
     public enum Type {
         PASSAGE,
         WALL,
         ESCAPE;
     }
 
-    /**
-     * The vertical coordinate of this cell in a grid.
-     */
+    //Vertical coordinates of this cell in a grid
     private final int row;
 
-    /**
-     * The horizontal coordinate of this cell in a grid.
-     */
+    //Horizontal coordinates of this cell in a grid
     private final int column;
 
-    /**
-     * The type of this cell: a passage, a wall or an escape.
-     */
+    //Type of cell (3 options stated above)
     private final Type type;
 
     public Cell(int row, int column, Type type) {

@@ -1,3 +1,8 @@
+/*  Aiden Donavan
+ *  6/7/2023
+ *  This class is a console wrapper for user interaction.
+ *  Reads an input and prints the output to the console
+ */
 package maze.util;
 
 import maze.model.Maze;
@@ -10,45 +15,20 @@ import java.util.Scanner;
 
 import static java.lang.Integer.parseInt;
 
-/**
- * This class is a console wrapper for user interaction.
- * Reads an input and prints the output to the console.
- * Stores a maze internally.
- *
- * @author Philipp Malkovsky
- * @see Maze
- */
 public class Console {
 
-    /**
-     * Scanner is used for reading user input.
-     */
+    //Scanner for user input
     private Scanner scanner;
 
-    /**
-     * The current maze. It is null when the game starts.
-     * {@code isMazeAvailable} indicates whether the
-     * maze exists.
-     */
+    //The current maze
     private Maze maze;
 
-    /**
-     *
-     */
+    //Self explanatory
     private boolean isMazeAvailable = false;
 
     /**
      * An endless loop that prints available options and
-     * processes user input. All available options are:
-     * <p>
-     * 1. Generate a new maze<br>
-     * 2. Load a maze<br>
-     * 3. Save the maze<br>
-     * 4. Display the maze<br>
-     * 5. Find the escape<br>
-     * <p>
-     * The last three are available only if
-     * {@code isMazeAvailable == true}.
+     * processes user input
      */
     public void start() {
         scanner = new Scanner(System.in);
@@ -103,9 +83,7 @@ public class Console {
         System.out.println("0. Exit");
     }
 
-    /**
-     * Closes an input and finishes the game.
-     */
+    ///Closes an input and finishes the game
     private void exit() {
         scanner.close();
         System.out.println("Bye!");
@@ -113,7 +91,7 @@ public class Console {
 
     /**
      * Asks a user to enter the dimensions of the new maze
-     * and then generates and prints the new one.
+     * and then generates and prints the new one
      */
     private void generate() {
         System.out.println("Enter the size of the new maze (in the [size] or [height width] format)");
@@ -135,7 +113,7 @@ public class Console {
 
     /**
      * Asks for a filename and then loads the serialized maze
-     * from the corresponding file which replaces the old one.
+     * from the corresponding file which replaces the old one
      */
     private void load() {
         System.out.println("Enter the filename");
@@ -154,7 +132,7 @@ public class Console {
 
     /**
      * Asks for a filename and then saves the serialized maze
-     * to the corresponding file.
+     * to the corresponding file
      */
     private void save() {
         System.out.println("Enter the filename");
@@ -168,16 +146,12 @@ public class Console {
         }
     }
 
-    /**
-     * Prints the current maze.
-     */
+    //Prints current maze
     private void display() {
         System.out.println(maze);
     }
 
-    /**
-     * Prints the maze with its path from the entrance to the exit.
-     */
+    //Prints solved maze
     private void findEscape() {
         System.out.println(maze.findEscape());
     }
